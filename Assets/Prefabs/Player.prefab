@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9032169736524075326}
   - component: {fileID: 2104389303475725801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ship_0002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 23898d796a6f9344f932bb8addf6fbd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,7 +97,9 @@ GameObject:
   - component: {fileID: 8961705009025176520}
   - component: {fileID: 4120720424206906603}
   - component: {fileID: -7092430665596217278}
-  m_Layer: 0
+  - component: {fileID: -4205684617882768836}
+  - component: {fileID: 7211461729410988407}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,9 +277,44 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005705178, y: -0.028525889}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.46576893
+--- !u!114 &-4205684617882768836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020421056495009327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01011d8ebcee76249ac5ff7e8839ce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  hitEffect: {fileID: 8919967796430043317, guid: 09606b6df59d9e845a38cec9c9be0134, type: 3}
+  applyCameraShake: 1
+--- !u!114 &7211461729410988407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020421056495009327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1680357ecb844df4dbe15f004edab0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6946599634830776453, guid: bd79009b1f4f20f40969e3c867a3035d, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  firingRate: 0.2
+  useAi: 0
+  firingRateVariance: 0
+  minimumfiringRate: 0.1
+  isFiring: 0

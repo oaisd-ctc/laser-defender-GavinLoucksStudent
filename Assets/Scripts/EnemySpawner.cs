@@ -13,6 +13,11 @@ public class EnemySpawner : MonoBehaviour
          StartCoroutine(SpawnEnemyWaves());
     }
 
+    public WaveConfigSO GetCurrentWave()
+    {
+        return currentWave;
+    }
+
    IEnumerator SpawnEnemyWaves()
     {
         do
@@ -24,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Instantiate(currentWave.GetEnemyPrefab(i),
                         currentWave.GetStartingWaypoint().position,
-                        Quaternion.identity,
+                        Quaternion.Euler(0,0, 180),
                         transform);
                     yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
                 }
@@ -32,11 +37,5 @@ public class EnemySpawner : MonoBehaviour
             }
         }
         while (isLooping);
-    }
-
-    public WaveConfigSO GetCurrentWave()
-    {
-        return currentWave;
-    }
-       
+    }   
 }
