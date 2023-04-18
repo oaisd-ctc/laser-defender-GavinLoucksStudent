@@ -48,7 +48,6 @@ public class player : MonoBehaviour
     void OnMove(InputValue value)
     {
         rawInput =  value.Get<Vector2>();
-        Debug.Log(rawInput);
     }
 
     void OnFire(InputValue value)
