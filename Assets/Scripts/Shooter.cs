@@ -74,6 +74,7 @@ public class Shooter : MonoBehaviour
             timeToProj = Mathf.Clamp(timeToProj, minimumfiringRate, float.MaxValue);
 
             audioPlayer.PlayShootingClip();
+           
 
             yield return new WaitForSeconds(timeToProj);
         }
