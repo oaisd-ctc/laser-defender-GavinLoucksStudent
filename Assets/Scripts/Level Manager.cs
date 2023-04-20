@@ -6,8 +6,15 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] float delayTime = 2f;
-   public void LoadGame()
+    ScoreKeeper scoreKeeper;
+
+    void Awake()
     {
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
+    public void LoadGame()
+    {
+        scoreKeeper.ResetScore();
         SceneManager.LoadScene("GameScene");
     }
 
